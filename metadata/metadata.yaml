@@ -1,0 +1,19 @@
+architecture: x86_64
+creation_date: 1671969523
+expiry_date: 1674561523
+properties:
+  architecture: x86_64
+  description: OpenWrt 22.03 x86_64 from docker image
+  name: OpenWrt-22.03-x86_64-dockerio
+  os: OpenWrt
+  release: "22.03"
+  serial: "20221225_11:58"
+  variant: default
+templates:
+  /etc/hosts:
+    when:
+    - create
+    - copy
+    create_only: false
+    template: hosts.tpl
+    properties: {}
