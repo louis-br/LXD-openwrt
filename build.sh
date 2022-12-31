@@ -3,6 +3,8 @@
 export CONTAINER_NAME="openwrt"
 
 build() {
+    mkdir --parents output/
+
     sudo podman build --tag="$CONTAINER_NAME" . || return
 
     sudo podman create --name="$CONTAINER_NAME" "$CONTAINER_NAME" || return
